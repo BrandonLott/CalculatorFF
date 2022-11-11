@@ -1,21 +1,31 @@
 .top-container {
     background-color: aqua;
-    height: 15vw;
+    height: 12vw;
 }
+
 .view-window{
     background-color: cadetblue;
-    height: 25vw
+    height: 22vw
 }
-
-
 
 .grid-container {
     background-color: darkslateblue;
     display: grid;
-    grid-template-columns: repeat( 5, 1fr );
-    grid-template-rows: repeat(5, 1fr);  
-    height: 60vw; 
+    grid-template-columns: repeat( 4, 25vw );
+    grid-template-rows: repeat(5, 11vw);  
+    height: 59vw; 
+    align-items: center;
+    justify-items: flex-start;
+    padding-left: 8%;
+
 }
-.grid-button {
-    
+
+.grid-button{
+    border-radius: 50%;
+    text-align: center;
+    background-color: transparent;
+    border-color: aliceblue;
+    color: aliceblue;
+    size-adjust: 10%;
+    padding:1em
 }
