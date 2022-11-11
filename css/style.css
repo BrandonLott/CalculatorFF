@@ -1,6 +1,21 @@
+.top-container {
+    background-color: aqua;
+    height: 15vw;
+}
+.view-window{
+    background-color: cadetblue;
+    height: 25vw
+}
+
+
+
 .grid-container {
+    background-color: darkslateblue;
     display: grid;
     grid-template-columns: repeat( 5, 1fr );
-    grid-template-rows: repeat(5, 1fr);
+    grid-template-rows: repeat(5, 1fr);  
+    height: 60vw; 
+}
+.grid-button {
     
 }
