@@ -55,7 +55,7 @@ sizes and landscape mode. */
 }
 
 /*
-//had to redo this
+//had to redo this got too messy....Ended up being the min height that threw me...lol
 .calculator-view-window{
     display: grid;
     background-color: rgba(67, 50, 110, 0.699);
