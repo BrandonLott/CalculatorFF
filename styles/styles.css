@@ -1,7 +1,9 @@
 /*  This Stylesheet needs to make my calculator look as close to the designed
 document that I was given, it also needs to take into account Phone/Tablet
 sizes and landscape mode. */
-
+*, *::before, *::after{
+    box-sizing: border-box; 
+}
  body{
     
     margin: 0;
@@ -26,6 +28,7 @@ sizes and landscape mode. */
     height: .5em;
 }
 .calculator-body{
+    min-height: 95vh;
     justify-content: center;
     border-top-left-radius:2em;
     border-top-right-radius: 2em;
@@ -39,21 +42,65 @@ sizes and landscape mode. */
     
 }
 .calculator-view-window{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: flex-end;
+    word-wrap: break-word;
+    word-break: break-all;
+    margin-right: 35px;
+    margin-left: 35px;
+    min-height: 150px;
+
+}
+
+/*
+//had to redo this
+.calculator-view-window{
+    display: grid;
     background-color: rgba(67, 50, 110, 0.699);
-    padding: 5em;
     color: white;
+    margin-right: 3em;
+    grid-template-columns: 1, 1em;
+    grid-template-rows:minmax 2, 1em;
+    display: flex;
+    align-items: flex-end;
+    justify-content:space-between;
+    flex-direction: column;
+    word-wrap:break-word;
+    word-break: break-all;
+    min-height: 250px;
+
+} */
+.previous-operand{
+    color:rgba(255, 255, 255, 0.555);
+    font-size: 2rem;
+    align-content: bottom;
+}
+.current-operand{
+    color:white;
+    font-size: 3.5rem;
+    align-content: bottom;
 }
 .calculator-keypad{
     display: grid;
     justify-content: center;
-    align-content: center;
+    align-content: top;
     grid-template-columns: repeat(4, 3.25em);
     grid-template-rows: repeat(5, 4.25em);
-    grid-gap: 1.25em;
-    padding-top: 1em;
+    grid-gap: 2em;
+  
+   
+}
+.btn:hover{
+    background-color: lightgreen;
+
+}
+button{
+    font-size: 1.72em;
+    font-weight: bolder;
 }
 .btn{
-    font-size: medium;
     color: white;
     background-color: transparent;
     display:inline-flex;
@@ -61,7 +108,7 @@ sizes and landscape mode. */
     justify-content: center;
     align-items: center;
     border-radius: 50%; 
-    padding: 2em;
+    padding: 1.2em;
 }
 .span-two-row{
     grid-row: span 2;
@@ -72,7 +119,7 @@ sizes and landscape mode. */
     border-radius: 3em;
 }
 .number{
-    border:solid .5px white;
+    border:solid 2px white;
 }
 .operator{
     border: solid .5px rgb(250, 214, 82);
@@ -85,8 +132,10 @@ sizes and landscape mode. */
     background-color: rgb(250, 214, 82);
 }
 .clear{
-    border: solid .5px rgb(250, 214, 82);
+    border: solid 2px rgb(250, 214, 82);
 }
 .backspace{
     visibility: hidden;
 } 
+
+
