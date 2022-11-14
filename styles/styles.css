@@ -2,27 +2,41 @@
 document that I was given, it also needs to take into account Phone/Tablet
 sizes and landscape mode. */
 
-body{
-    background:rgb(67, 50, 110);
+ body{
+    
     margin: 0;
     font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-    
 }
 .menu-section{
     background: rgb(100, 83, 144);
     padding: 2.25em;
+    border-top-right-radius: 2em;
+    border-top-left-radius: 2em;
+    
 }
 .burger-menu{
     position: relative;
     top: 2.25em;
     right: 1.5em;
+    border-top-left-radius: 2em;
+    border-top-right-radius: 2em;
 }
 .divider-bar{
     background: rgb(50, 38, 80);
     height: .5em;
 }
 .calculator-body{
-    background-color: rgb(67, 50, 110);
+    justify-content: center;
+    border-top-left-radius:2em;
+    border-top-right-radius: 2em;
+    border-bottom-left-radius:2em ;
+}
+.calculator-section{
+    background: rgb(67, 50, 110);
+    height: 86vh;
+    border-bottom-left-radius: 2em;
+    border-bottom-right-radius: 2em;
+    
 }
 .calculator-view-window{
     background-color: rgba(67, 50, 110, 0.699);
@@ -75,4 +89,4 @@ body{
 }
 .backspace{
     visibility: hidden;
-}
+} 
