@@ -3,7 +3,7 @@ document that I was given, it also needs to take into account Phone/Tablet
 sizes and landscape mode. */
 
 body{
-    background:linear-gradient(lightgreen, green);
+    background:rgb(67, 50, 110);
     margin: 0;
     font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
     
@@ -31,6 +31,48 @@ body{
 }
 .calculator-keypad{
     display: grid;
+    justify-content: center;
+    align-content: center;
+    grid-template-columns: repeat(4, 3.25em);
+    grid-template-rows: repeat(5, 4.25em);
+    grid-gap: 1.25em;
+    padding-top: 1em;
 }
-
-
+.btn{
+    font-size: medium;
+    color: white;
+    background-color: transparent;
+    display:inline-flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%; 
+    padding: 2em;
+}
+.span-two-row{
+    grid-row: span 2;
+    border-radius: 3em;
+}
+.span-two-column{
+    grid-column: span 2;
+    border-radius: 3em;
+}
+.number{
+    border:solid .5px white;
+}
+.operator{
+    border: solid .5px rgb(250, 214, 82);
+    color: rgb(67,50,110);
+    background-color: rgb(250, 214, 82);
+}
+.equals{
+    border: solid .5px rgb(250, 214, 82);
+    color: rgb(67,50,110);
+    background-color: rgb(250, 214, 82);
+}
+.clear{
+    border: solid .5px rgb(250, 214, 82);
+}
+.backspace{
+    visibility: hidden;
+}
