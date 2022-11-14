@@ -1,0 +1,36 @@
+/*  This Stylesheet needs to make my calculator look as close to the designed
+document that I was given, it also needs to take into account Phone/Tablet
+sizes and landscape mode. */
+
+body{
+    background:linear-gradient(lightgreen, green);
+    margin: 0;
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    
+}
+.menu-section{
+    background: rgb(100, 83, 144);
+    padding: 2.25em;
+}
+.burger-menu{
+    position: relative;
+    top: 2.25em;
+    right: 1.5em;
+}
+.divider-bar{
+    background: rgb(50, 38, 80);
+    height: .5em;
+}
+.calculator-body{
+    background-color: rgb(67, 50, 110);
+}
+.calculator-view-window{
+    background-color: rgba(67, 50, 110, 0.699);
+    padding: 5em;
+    color: white;
+}
+.calculator-keypad{
+    display: grid;
+}
+
+

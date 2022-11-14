@@ -1,55 +1,48 @@
-<!-- Firefly calculator challenge... Create a calculator that emulated the one that they have
-shown, (stylized like theirs) then allow the calculator to work and look nice in both portrait
-and landscape -->
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Calculator</title>
-    <link rel="stylesheet" href="css/style.css">
+    <title>Document</title>
+    <link rel="stylesheet" href="styles/styles.css">
+    <script src="scripts/scripts.js"></script>
 </head>
 <body>
-    <!--setup the uppermost section of the calculator and place a menu button-->
-    <div class="top-container">
-        <div class="nav-bar">
-            <div class="hamburger-menu">
-                <img src="assets/menu.svg" alt="Menu">
-            </div>    
+    <div class="calculator-body">
+        <div class="menu-section">
+            <div id="small-frame-menu" class="menu">
+                <img class="burger-menu" src="assets/menu.svg" alt="Menu">
+            </div> 
         </div>
-    </div>
-     <!-- structure the viewport that contains a history + current -->
-    <div class="view-window">
-        <div class="history"><p id="history-value">history</p>
-            <div class="screen">
-                <p id="current-data">current data</p>
+        <div class="divider-bar"></div>
+        <div class="calculator-grid">
+            <div class="calculator-view-window">
+                <div data-previous-operand class="previous-line">previous line</div>
+                <div data-current-operand class="current-line">current line</div>
+            </div>
+            <hr width="83%" height="1px" color="white"></hr>
+            <div class="calculator-keypad">
+                <button class="btn clear" data-all-clear>C</button>
+                <button class ="btn backspace" data-delete >🠜</button>
+                <button class="btn operator divide" data-operation >&divide;</button>
+                <button class="btn operator divide" data-number >&times;</button>
+                <button class="btn digit number" data-number >7</button>
+                <button class="btn digit number" data-number >8</button>
+                <button class="btn digit number" data-operation >9</button>
+                <button class="btn operator divide" data-number >&minus;</button>
+                <button class="btn digit number" data-number >4</button>
+                <button class="btn digit number" data-number >5</button>
+                <button class="btn digit number" data-operation>6</button>
+                <button class="btn operator divide" data-number >&plus;</button>
+                <button class="btn digit number" data-number >1</button>
+                <button class="btn digit number" data-number >2</button>
+                <button class="btn digit number" data-operation >3</button>
+                <button class="btn equals" data-equals class="span-two-row" >&equals;</button>
+                <button data-number class="btn digit number zero span-two-column" >0</button>
+                <button class="btn digit number" data-number >.</button>
             </div>
         </div>
     </div>
-    <div class="grid-container">
-            <button type=button class="grid-button grid-item-1 circle">C</button>
-            <button class="grid-button grid-button-blank"></button>
-            <button class="grid-button grid-button-divide">&divide;</button>
-            <button class="grid-button grid-button-times">&times;</button>
-            <button class="grid-button grid-button-7">7</button>
-            <button class="grid-button grid-button-8">8</button>
-            <button class="grid-button grid-button-9">9</button>
-            <button class="grid-button grid-button-minus">&minus;</button>
-            <button class="grid-button grid-button-4">4</button>
-            <button class="grid-button grid-button-5">5</button>
-            <button class="grid-button grid-button-6">6</button>
-            <button class="grid-button grid-button-plus">&plus;</button>
-            <button class="grid-button grid-button-1">1</button>
-            <button class="grid-button grid-button-2">2</button>
-            <button class="grid-button grid-button-3">3</button>
-            <button class="grid-button grid-button-equals">&equals;</button>
-            <button class="grid-button grid-button-0">0</button>
-            <button class="grid-button grid-button-.">.</button>
-           
-         
-    </div>
-    
 </body>
 </html>
