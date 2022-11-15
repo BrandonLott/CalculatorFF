@@ -20,6 +20,7 @@ class Calculator{
 
     appendNumber(number){
         if (number === '.' && this.currentOperand.includes('.')) return
+        if (this.currentOperand.toString().length >= 9) return
         this.currentOperand = this.currentOperand.toString() + number.toString();
         
     }
@@ -108,6 +109,10 @@ const equalsButton = document.querySelector('[data-equals]');
 const previousOperandTextElement = document.querySelector('[data-previous-operand]');
 const currentOperandTextElement = document.querySelector('[data-current-operand]');
 let equalsWasClicked = false;
+/*nav menu functionality using selected by classes*/
+const hamburger = document.querySelector(".hamburger")
+const navMenu = document.querySelector(".nav-menu")
+
 
 
 /*Calculator class bluprinted, time to use*/
@@ -141,9 +146,7 @@ equalsButton.addEventListener('click', button => {
     console.log('equalswasClicked set to : ', equalsWasClicked);
     calculator.compute()
     calculator.updateDisplay()
-    //i want to clear the value when a number button is clicked
-//testing
-    //if (equalsWasClicked)) {alert('you clicked equals'
+
 });
 
 allClearButton.addEventListener('click', button => {
@@ -155,3 +158,14 @@ deleteButton.addEventListener('click', button => {
     calculator.delete()
     calculator.updateDisplay()
 });
+
+hamburger.addEventListener('click',()=>{
+    hamburger.classList.toggle("active");
+    navMenu.classList.toggle("active");
+});
+
+document.querySelectorAll(".nav-link").forEach(n=> n.addEventListener('click', ()=>{
+    hamburger.classList.remove("active");
+    navMenu.classList.remove("active");
+
+}));
