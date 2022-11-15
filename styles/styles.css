@@ -1,46 +1,68 @@
-/*  This Stylesheet needs to make my calculator look as close to the designed
-document that I was given, it also needs to take into account Phone/Tablet
-sizes and landscape mode. */
-*, *::before, *::after{
-    box-sizing: border-box; 
+*, *::before, *::after {
+    box-sizing: border-box;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-weight: normal;
+    padding: 0%;
+    margin: 0%;
+
 }
- body{
+
+body{
+    background: linear-gradient(lightgreen, green);
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     
-    margin: 0;
-    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
 }
+
+.calculator-body{
+    display: flex;
+    flex-flow: column;
+    height:100vh;
+    width:100vw;
+    border:1px solid #ccc;
+    border-radius: 2em;
+}
+
 .menu-section{
+    display: flex;
     background: rgb(100, 83, 144);
-    padding: 2.25em;
+    height: 18%;
+    align-items:baseline;
     border-top-right-radius: 2em;
     border-top-left-radius: 2em;
-    
 }
+
 .burger-menu{
     position: relative;
-    top: 2.25em;
-    right: 1.5em;
-    border-top-left-radius: 2em;
-    border-top-right-radius: 2em;
+    top: 9vh;
+    left:3vh;
 }
+
 .divider-bar{
+    min-height: 8px;
     background: rgb(50, 38, 80);
-    height: .5em;
+    margin:0%;
+    padding: 0%;
+    border: 0px;
+    border-style: none;
 }
-.calculator-body{
-    min-height: 95vh;
-    justify-content: center;
-    border-top-left-radius:2em;
-    border-top-right-radius: 2em;
-    border-bottom-left-radius:2em ;
-}
+
 .calculator-section{
+    justify-content: center;
+    align-items: center;
     background: rgb(67, 50, 110);
-    height: 86vh;
-    border-bottom-left-radius: 2em;
+    height:100%;
     border-bottom-right-radius: 2em;
-    
+    border-bottom-left-radius: 2em;
 }
+
+hr{
+    position: absolute;
+    left: 8%;
+}
+
 .calculator-view-window{
     display: flex;
     flex-direction: column;
@@ -48,58 +70,42 @@ sizes and landscape mode. */
     align-items: flex-end;
     word-wrap: break-word;
     word-break: break-all;
-    margin-right: 35px;
-    margin-left: 35px;
-    min-height: 150px;
-
+    margin-right: 9.25%;
+    margin-left: 9.25%;
+    min-height: 125px;
 }
 
-/*
-//had to redo this got too messy....Ended up being the min height that threw me...lol
-.calculator-view-window{
-    display: grid;
-    background-color: rgba(67, 50, 110, 0.699);
-    color: white;
-    margin-right: 3em;
-    grid-template-columns: 1, 1em;
-    grid-template-rows:minmax 2, 1em;
-    display: flex;
-    align-items: flex-end;
-    justify-content:space-between;
-    flex-direction: column;
-    word-wrap:break-word;
-    word-break: break-all;
-    min-height: 250px;
-
-} */
 .previous-operand{
     color:rgba(255, 255, 255, 0.555);
     font-size: 2rem;
     align-content: bottom;
 }
+
 .current-operand{
     color:white;
     font-size: 3.5rem;
     align-content: bottom;
 }
+
 .calculator-keypad{
     display: grid;
     justify-content: center;
     align-content: top;
-    grid-template-columns: repeat(4, 3.25em);
-    grid-template-rows: repeat(5, 4.25em);
-    grid-gap: 2em;
-  
-   
+    margin-top: 7%;
+    grid-template-columns: repeat(4, 13%);
+    grid-template-rows: repeat(5, 12.5%);
+    grid-gap: 9%;
 }
+
 .btn:hover{
     background-color: lightgreen;
-
 }
+
 button{
-    font-size: 1.72em;
+    font-size: 1.25em;
     font-weight: bolder;
 }
+
 .btn{
     color: white;
     background-color: transparent;
@@ -108,34 +114,52 @@ button{
     justify-content: center;
     align-items: center;
     border-radius: 50%; 
-    padding: 1.2em;
+    padding: 1.15em;
+
 }
+
 .span-two-row{
     grid-row: span 2;
     border-radius: 3em;
 }
+
 .span-two-column{
     grid-column: span 2;
     border-radius: 3em;
 }
+
 .number{
     border:solid 2px white;
 }
+
 .operator{
     border: solid .5px rgb(250, 214, 82);
     color: rgb(67,50,110);
     background-color: rgb(250, 214, 82);
 }
+
 .equals{
     border: solid .5px rgb(250, 214, 82);
     color: rgb(67,50,110);
     background-color: rgb(250, 214, 82);
 }
+
 .clear{
     border: solid 2px rgb(250, 214, 82);
 }
+
 .backspace{
     visibility: hidden;
 } 
 
+@media screen and (min-width: 600px){
+    .btn{
+        color: green;
+    }
+}
 
+@media screen and (min-width: 800px){
+    .btn{
+        color: purple;
+    }
+}
