@@ -1,6 +1,4 @@
-/* everything should be data-classes as to not get confused with
- the classes used in css.
-*/
+
 class Calculator{
     constructor(previousOperandTextElement, currentOperandTextElement){
         this.previousOperandTextElement = previousOperandTextElement;
