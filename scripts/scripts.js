@@ -1,28 +1,28 @@
-
+/**initial creation */
 class Calculator{
     constructor(previousOperandTextElement, currentOperandTextElement){
         this.previousOperandTextElement = previousOperandTextElement;
         this.currentOperandTextElement = currentOperandTextElement;
         this.clear()
     }
-
+/**clear info */
     clear(){
         this.currentOperand = '';
         this.previousOperand = '';
         this.operation = '';
     }
-
+/** button allows to step back a char in string representation of number */
     delete(){
         this.currentOperand = this.currentOperand.toString().slice(0, -1)
     }
-
+/**adds next button clicks value to current string and limits the length */
     appendNumber(number){
         if (number === '.' && this.currentOperand.includes('.')) return
         if (this.currentOperand.toString().length >= 9) return
         this.currentOperand = this.currentOperand.toString() + number.toString();
         
     }
-
+/** check and for operator calls computing function, sets values up in h istory for reference */
     chooseOperation(operation){
         if (this.currentOperand === '')return;
         if (this.previousOperand !== ''){
@@ -32,7 +32,7 @@ class Calculator{
         this.previousOperand = this.currentOperand;
         this.currentOperand = '';
     }
-
+/**chage function based on operator given */
     compute(){
         let computation
         const prev = parseFloat(this.previousOperand)
@@ -60,13 +60,13 @@ class Calculator{
         this.previousOperand = ''
        
     }
-
+/**this was needed to improve quality of life instead of manually clearing after each operation */
     wasEqualsClicked(equalsWasClicked){
         if (equalsWasClicked === true){
             this.clear()
         }
     }
-
+/** this allows us to see whats happening */
     updateDisplay(){
         this.currentOperandTextElement.innerText = 
         this.getDisplayNumber(this.currentOperand)
@@ -77,6 +77,7 @@ class Calculator{
         }  
         //if current button clicked is '=' store evaluated expression in history   
     }
+    /**allows us to have nicely displayed digits with commas */
     getDisplayNumber(number){
         const stringNumber = number.toString()
         const integerDigits = parseFloat(stringNumber.split('.')[0])
@@ -92,9 +93,7 @@ class Calculator{
         }else{
             return integerDisplay
         }
-        //const floatNumber = parseFloat(number)
-        //if (isNaN(floatNumber)) return ''
-        //return floatNumber.toLocaleString('en');
+
     }
 
 }
@@ -116,7 +115,7 @@ const navMenu = document.querySelector(".nav-menu")
 /*Calculator class bluprinted, time to use*/
 
 const calculator = new Calculator(previousOperandTextElement, currentOperandTextElement)
-
+/**loop through number buttons and make sure '=' clicked set correct  */
 numberButtons.forEach(button => {
     
     button.addEventListener('click', () => {
@@ -125,11 +124,12 @@ numberButtons.forEach(button => {
         calculator.wasEqualsClicked(equalsWasClicked);
         calculator.appendNumber(button.innerText);
         calculator.updateDisplay();
+        //after function runs
         equalsWasClicked = false;
         
     })
 })
-
+/**loop through operators again setting value of '=' clicked */
 operatorButtons.forEach(button => {
     button.addEventListener('click', () => {
         equalsWasClicked = false;
@@ -138,7 +138,7 @@ operatorButtons.forEach(button => {
         calculator.updateDisplay()
     })
 })
-
+/**the all important button  */
 equalsButton.addEventListener('click', button => {
     equalsWasClicked = true;
     console.log('equalswasClicked set to : ', equalsWasClicked);
@@ -146,22 +146,22 @@ equalsButton.addEventListener('click', button => {
     calculator.updateDisplay()
 
 });
-
+/**clear everything */
 allClearButton.addEventListener('click', button => {
     calculator.clear()
     calculator.updateDisplay()
 });
-
+/**hidden delete button that actually can be quite useful  */
 deleteButton.addEventListener('click', button => {
     calculator.delete()
     calculator.updateDisplay()
 });
-
+/**hamburger and navMenu functionality active */
 hamburger.addEventListener('click',()=>{
     hamburger.classList.toggle("active");
     navMenu.classList.toggle("active");
 });
-
+/**remove avtive states  */
 document.querySelectorAll(".nav-link").forEach(n=> n.addEventListener('click', ()=>{
     hamburger.classList.remove("active");
     navMenu.classList.remove("active");
