@@ -207,7 +207,7 @@ button{
     .nav-menu{
         position: fixed;
         right: -100%;
-        top:20%;
+        top:18%;
         gap: 0;
         flex-direction: column;
         background-color: rgba(100, 83, 144, 0.90);
